@@ -11,4 +11,5 @@
 *.bkp
 
 tmp/
-cms/static/uploads/*
+cms/static/cms/uploads/*
+mapathon/config.py
