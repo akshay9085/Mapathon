@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+   <meta http-equiv="Pragma" content="no-cache">
+   <meta http-equiv="Expires" content="-1">
+   <meta name="description" content="Mapathon">
+   <meta name="author" content="FOSSEE web team">
+   <meta name="keywords" content="Mapathon, QGIS, competition">
+   <meta name="keywords"
+      content="ISRO, IIT Bombay, Remote Sensing, Mapping, Open source, software">
+   <link rel="icon" href="../static/cms/image/Synfig-logo.png">
+   <title>IITB-ISRO Mapathon</title>
+    <link href="static/cms/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet">
+   <link href="static/cms/fontawesome/css/all.css" rel="stylesheet">
+<!--   <link href="css/custom.css?ver=1.4" rel="stylesheet"> -->
+   <link href="static/cms/css/custom.css" rel="stylesheet">
+    <!-- <script type="text/javascript">
+        var activeNavItem = $('.nav-item');
+
+    activeNavItem.click(function () {
+      activeNavItem.removeClass('active');
+      $(this).addClass('active');
+    });
+    </script> -->
+    <!-- <script type="text/javascript">
+    $(document).ready(function () {
+        var url = window.location;
+        console.log(url);
+        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+        $('ul.nav a').filter(function() {
+             return this.href == url;
+        }).parent().addClass('active');
+    });
+</script>  -->
+
+<style>
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  /*background-color: black;*/
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+</style>
+</head>
+<body>
+<!-- Section for social media links starts -->
+   <div class="icon-bar">
+      <a href="https://www.facebook.com/FOSSEENMEICT/" class="facebook text-white" target="_blank"><i
+            class="fab fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/fossee_nmeict/" class="instagram" target="_blank"><i
+            class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/FOSSEE/" class="twitter" target="_blank"><i
+            class="fab fa-twitter-square"></i></a>
+      <a href="https://www.linkedin.com/company/fossee-iitb/" class="linkedin" target="_blank"><i
+            class="fab fa-linkedin"></i></a>
+   </div>
+   <!-- Section for social media links ends -->
+ 
+   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"
+         aria-hidden="true"></i></button>
+
+<div class="banner-content">
+{{ banner.content | safe }}
+</div>
+<!-- <nav class=" navbar navbar-dark navbar navbar-expand-lg bg-dark fixed-top"> -->
+<nav class="navbar navbar-expand-lg site-header sticky-top py-1">
+   <!--  <a class="navbar-brand" href="/">FOSSEE Workshops</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- <ul class="navbar-nav mr-auto">
+        </ul> -->
+        <div class="my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                {% for nav in navs %}
+                    <li class="nav-item {% if request.path == nav.link %} active {%endif%}">
+                        {% if nav.subnavs %}
+                        
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                            class="material-icons" style="vertical-align: middle">{{ nav.name }}</span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        {% for subnav in nav.subnavs %}
+                                        <a class="dropdown-item" href="{{ subnav.link }}">{{ subnav.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            </ul>
+                        {% else %}
+                            <a class="nav-link" href="{{ nav.link }}">{{ nav.name }}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="base-content">
+{{ page.content | safe }}
+</div>
+
+<div class="footer-content">
+{{ footer.content | safe }}
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var url = window.location;
+        console.log(url);
+        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+        $('ul.nav a').filter(function() {
+             return this.href == url;
+        }).parent().addClass('active');
+    });
+</script> 
+</body>
+
+</html>
