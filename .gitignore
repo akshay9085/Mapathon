@@ -11,5 +11,5 @@
 *.bkp
 
 tmp/
-cms/static/cms/uploads/*
+static/cms/uploads/*
 mapathon/config.py

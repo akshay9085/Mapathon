@@ -130,10 +130,10 @@ STATICFILES_DIRS = [
     '/../static/',
 ]
 
-#STATIC_ROOT = 'cms/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-MEDIA_URL = "/downloads/"
+MEDIA_ROOT = os.path.join(BASE_DIR)
+MEDIA_URL = "/"
 
 
 # Email Connection Settings
