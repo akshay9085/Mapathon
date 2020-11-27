@@ -14,45 +14,15 @@
       content="ISRO, IIT Bombay, Remote Sensing, Mapping, Open source, software">
    <link rel="icon" href="../static/cms/image/Synfig-logo.png">
    <title>IITB-ISRO Mapathon</title>
-    <link href="static/cms/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet">
-   <link href="static/cms/fontawesome/css/all.css" rel="stylesheet">
+    <link href="../../static/cms/bootstrap-4.5.0/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../../static/cms/fontawesome/css/all.css" rel="stylesheet">
 <!--   <link href="css/custom.css?ver=1.4" rel="stylesheet"> -->
-   <link href="static/cms/css/custom.css" rel="stylesheet">
-    <!-- <script type="text/javascript">
-        var activeNavItem = $('.nav-item');
-
-    activeNavItem.click(function () {
-      activeNavItem.removeClass('active');
-      $(this).addClass('active');
-    });
-    </script> -->
-    <!-- <script type="text/javascript">
-    $(document).ready(function () {
-        var url = window.location;
-        console.log(url);
-        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
-        $('ul.nav a').filter(function() {
-             return this.href == url;
-        }).parent().addClass('active');
-    });
-</script>  -->
-
-<style>
-.container {
-  position: relative;
-  font-family: Arial;
-}
-
-.text-block {
-  position: absolute;
-  top: 30px;
-  left: 20px;
-  /*background-color: black;*/
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-</style>
+   <link href="../../static/cms/css/custom.css" rel="stylesheet">
+<script src="../../static/cms/js/jquery-3.2.1.min.js"></script>
+   <script src="../../static/cms/js/popper.min.js"></script>
+   <script src="../../static/cms/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+   <script src="../../static/cms/js/holder.min.js"></script>
+  
 </head>
 <body>
 <!-- Section for social media links starts -->
@@ -74,20 +44,15 @@
 <div class="banner-content">
 {{ banner.content | safe }}
 </div>
-<!-- <nav class=" navbar navbar-dark navbar navbar-expand-lg bg-dark fixed-top"> -->
 <nav class="navbar navbar-expand-lg site-header sticky-top py-1">
-   <!--  <a class="navbar-brand" href="/">FOSSEE Workshops</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- <ul class="navbar-nav mr-auto">
-        </ul> -->
-        <div class="my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto">
-                {% for nav in navs %}
+      <a class="navbar-brand" href="#"><span class="navbar-toggler-icon"></span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon" style="color:#f50000"><i class="fas fa-align-justify"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto  mx-auto navbar-right">
+               {% for nav in navs %}
                     <li class="nav-item {% if request.path == nav.link %} active {%endif%}">
                         {% if nav.subnavs %}
                         
@@ -111,9 +76,12 @@
                 {% endfor %}
 
             </ul>
-        </div>
+        
     </div>
 </nav>
+
+
+
 <div class="base-content">
 {{ page.content | safe }}
 </div>

@@ -9,7 +9,7 @@ from django.conf import settings
 # Create your models here.
 
 class Nav(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=128)
     link = models.CharField(max_length=255)
     position = models.IntegerField()
     active = models.BooleanField(default=True)
