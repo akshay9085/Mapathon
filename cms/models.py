@@ -3,6 +3,7 @@ import os
 from django.core.exceptions import ValidationError
 from django.core.files.storage import FileSystemStorage
 from django.db import models
+from django.conf import settings
 
 
 # Create your models here.
@@ -74,14 +75,14 @@ def get_filename(instance, _):
 
 
 def validate_filename(value):
-    if os.path.exists('cms/static/' + value):
+    if os.path.exists('static/cms/uploads/' + value):
         raise ValidationError('Static file with that name already exists! Please choose a unique name. You may use '
                               'foldername/filename to upload to a folder')
 
 
 class StaticFile(models.Model):
     filename = models.CharField(max_length=70, unique=True, validators=[validate_filename])
-    file = models.FileField(upload_to=get_filename, storage=FileSystemStorage(location='cms', base_url='/'),
+    file = models.FileField(upload_to=get_filename, storage=FileSystemStorage(),
                             blank=False,
                             help_text='Please upload static file (image, css, js, etc). This file will be accessible '
                                       'at static/cms/filename')
