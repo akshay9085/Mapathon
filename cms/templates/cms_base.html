@@ -60,7 +60,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                            class="material-icons" style="vertical-align: middle">{{ nav.name }}</span>
+                                            class="material-icons" style="vertical-align: middle">{{ nav.name | safe }}</span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         {% for subnav in nav.subnavs %}
@@ -70,7 +70,7 @@
                                 </li>
                             </ul>
                         {% else %}
-                            <a class="nav-link" href="{{ nav.link }}">{{ nav.name }}</a>
+                            <a class="nav-link" href="{{ nav.link }}">{{ nav.name | safe }}</a>
                         {% endif %}
                     </li>
                 {% endfor %}
