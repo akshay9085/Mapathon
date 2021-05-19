@@ -70,6 +70,10 @@ def get_filename(instance, _):
         subdir = 'images'
     elif extension == '.pdf':
         subdir = 'pdf'
+    elif extension == '.css':
+        subdir = 'css'
+    elif extension == '.js':
+        subdir = 'js'
     # Add more
     print(extension, subdir)
     return os.path.join('static/cms/uploads', subdir, str(instance.filename))
