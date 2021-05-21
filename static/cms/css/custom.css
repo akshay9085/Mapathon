@@ -1,18 +1,24 @@
 @font-face {
-  font-family: Fira Sans;
-  src: url(Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf);
-  font-family: Nunito Sans;
-  src: url(Nunito_Sans/NunitoSans-Regular.ttf);
+  /*font-family: Fira Sans;
+  src: url(Fira_Sans_Extra_Condensed/FiraSansExtraCondensed-Regular.ttf);*/
+ /* font-family: Nunito Sans;
+  src: url(Nunito_Sans/NunitoSans-Regular.ttf);*/
+  font-family: ABeeZee;
+  src: url(ABeeZee/ABeeZee-Regular.ttf);
+  /*font-family: Dancing_Script;
+  src: url(Dancing_Script/DancingScript-VariableFont_wght.ttf);*/
+  font-family: Original_Surfer;
+  src: url(Original_Surfer/OriginalSurfer-Regular.ttf);
 }
 
 
 
 body {
-  font-family: 'Nunito sans' !important;
+  font-family: 'ABeeZee' !important;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
 }
 
 html {
@@ -43,6 +49,10 @@ html {
 .smalltext{
   padding-top: 5px;
   font-size: 16px;
+}
+
+#activities table, td, thead{
+  border: 1px solid black !important;
 }
 
 .results-table table, td{
@@ -118,22 +128,21 @@ html {
 # front Section
 --------------------------------------------------------------*/
 #front {
-  width: 100%;
-  /*height: 100vh;*/
-  background: url(../uploads/images/bg.png) top center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+display: flex;
+width: 1230px;
+margin: auto;
+z-index: -80px;
+height: 100vh;
+justify-content: center;
 }
 
-/*@media (min-width: 1024px) {
+@media (min-width: 1024px) {
   #front {
     background-attachment: fixed;
   }
-}*/
+}
 
-#front:before {
+#front.before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -161,15 +170,18 @@ html {
   }
 }
 
-#front .dates{
-  background-color: rgb(0, 0, 0, 0.4);
+
+.cover .dates{
+  
   border-radius: 10px;
+  margin-top: -15px;
+  position: absolute;
 }
 
 #front h1 {
   color: #fff;
-  font-family: "Raleway", sans-serif;
-  font-size: 40px;
+  font-family: "ABeeZee", sans-serif;
+  font-size: 56px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -197,7 +209,7 @@ html {
 }
 
 #front .about-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: "ABeeZee", sans-serif;
   font-weight: 500;
   font-size: 24px;
   letter-spacing: 1px;
@@ -209,15 +221,14 @@ html {
   color: #fff;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid green;
-  background-color: green;
-border-radius: 10px;
-
+  border: 2px solid yellow;
+  background-color: yellow;
+  color: red;
 }
 
 #front .about-btn:hover {
-  background-color: white;
-  color: green;
+  background-color: red;
+  color: yellow;
 }
 
 @-webkit-keyframes pulsate-btn {
@@ -336,4 +347,160 @@ for better animation effect */
 .box-inner {
   width: 100%;
   height: auto;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+#abc
+{  
+  font-family: 'Original_Surfer';
+  font-size: 25px;
+  color: red;
+}
+
+
+.cover {
+width: 100%;
+background-color: #021422;
+z-index: -15;
+}
+
+@media only screen and (min-width: 500px){
+ 
+#hero{
+margin: auto;
+max-width: 1220px;
+display:flex;
+align-self: center;
+align-items: center;
+}
+
+.cover .dates{
+
+  border-radius: 10px;
+  margin-top: 20px;
+  /*position: absolute;*/
+} 
+ 
+}
+
+#kk{
+padding:0px;
+margin:0px;
+}
+
+#ll{
+padding:0px;
+margin:0px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+@media only screen and (max-width: 500px){
+ 
+ .cover .dates{
+  margin-top: 70px;
+  position: absolute;
+} 
+
+#iconcal{
+  display: none;
+}
+
+#ll{
+  margin-top: -60px;
+}
+ 
 }
