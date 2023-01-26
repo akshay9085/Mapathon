@@ -13,7 +13,7 @@
    <meta name="keywords"
       content="IIT Bombay, Remote Sensing, Mapping, Open source, software">
    <link rel="icon" href="{% static 'cms/uploads/images/favicon.png' %}">
-   <title>IITB-AICTE Mapathon</title>
+   <title>FOSSEE-GIS</title>
     <link href="{% static 'cms/bootstrap-4.5.0/css/bootstrap.min.css' %}" rel="stylesheet">
    <link href="{% static 'cms/fontawesome/css/all.css' %}" rel="stylesheet">
 <!--   <link href="css/custom.css?ver=1.4" rel="stylesheet"> -->
@@ -27,7 +27,7 @@
 </head>
 <body>
 <!-- Section for social media links starts -->
-   <div class="icon-bar">
+  <!--  <div class="icon-bar">
       <a href="https://www.facebook.com/FOSSEENMEICT/" class="facebook text-white" target="_blank"><i
             class="fab fa-facebook-square"></i></a>
       <a href="https://www.instagram.com/fossee_nmeict/" class="instagram" target="_blank"><i
@@ -36,20 +36,20 @@
             class="fab fa-twitter-square"></i></a>
       <a href="https://www.linkedin.com/company/fossee-iitb/" class="linkedin" target="_blank"><i
             class="fab fa-linkedin"></i></a>
-   </div>
+   </div> -->
    <!-- Section for social media links ends -->
  
-   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"
-         aria-hidden="true"></i></button>
 
 <div class="banner-content">
 {{ banner.content | safe }}
 </div>
-<nav class="navbar navbar-expand-lg site-header sticky-top py-1">
-      <a class="navbar-brand" href="#"><span class="navbar-toggler-icon"></span></a>
+<nav class="navbar navbar-expand-lg navbar-light site-header m-2">
+       <a class="navbar-brand" href="#">
+    <img src="{% static 'cms/uploads/images/site-logo.png' %}">
+  </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon" style="color:#f50000"><i class="fas fa-align-justify"></i></span>
+         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto  mx-auto navbar-right">
@@ -79,6 +79,12 @@
             </ul>
         
     </div>
+     <a class="navbar-brand" href="#">
+    <img src="{% static 'cms/uploads/images/iitb-logo.png' %}">
+  </a>
+        <a class="navbar-brand" href="#">
+    <img src="{% static 'cms/uploads/images/fossee-logo.png' %}">
+  </a>
 </nav>
 
 
