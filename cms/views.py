@@ -2,6 +2,7 @@
 from django.forms import model_to_dict
 from django.http import Http404
 from django.shortcuts import render
+from mapathon.config import *
 
 from cms.models import Page, Nav, SubNav, Footer, Banner
 
@@ -12,6 +13,7 @@ def home(request, permalink=''):
     page = Page.objects.filter(permalink=permalink, active=True)
     footer = Footer.objects.filter(active=True)
     banner = Banner.objects.filter(active=True)
+    analytics_code = GOOGLE_ANALYTICS_CODE
     if page.exists():
         page = page.first()
     else:
@@ -27,5 +29,5 @@ def home(request, permalink=''):
         navs.append(nav_obj)
 
     return render(
-        request, 'cms_base.html', {'page': page, 'navs': navs, 'footer': footer.first(), 'banner' : banner.first()}
+        request, 'cms_base.html', {'page': page, 'navs': navs, 'footer': footer.first(), 'banner' : banner.first(), 'analytics_code' : analytics_code}
     )
