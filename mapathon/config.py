@@ -38,3 +38,4 @@ SITE = 'SITE'
 PRODUCTION_URL_NAME = 'http://127.0.0.1:8000'
 ROOT_URL_VAL = 'http://127.0.0.1:8000' #http://127.0.0.1:8000
 #########################################
+GOOGLE_ANALYTICS_CODE = 'analytics-code'
